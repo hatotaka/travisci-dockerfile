@@ -21,8 +21,9 @@ install:
  - sudo apt-get install docker-engine
  - echo "DOCKER_OPTS=\"${DOCKER_OPTS}\"" | sudo tee /etc/default/docker
  - sudo service docker restart
+ - sudo docker login --email "${DOCKER_EMAIL}" --password "${DOCKER_PASSWORD}" --username "${DOCKER_USER}" "${DOCKER_REGISTORY}"
 
 script:
-  - sudo docker build -t ${DOCKER_REGISTORY}/${DOCKER_USER}/travis-${DOCKERFILE_TARGET} ${DOCKERFILE_TARGET}
-  - sudo docker push ${DOCKER_REGISTORY}/${DOCKER_USER}/travis-${DOCKERFILE_TARGET}
+  - sudo docker build -t "${DOCKER_REGISTORY}/${DOCKER_USER}/travis-${DOCKERFILE_TARGET}" "${DOCKERFILE_TARGET}"
+  - sudo docker push "${DOCKER_REGISTORY}/${DOCKER_USER}/travis-${DOCKERFILE_TARGET}"
 
