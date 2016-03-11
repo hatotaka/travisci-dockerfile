@@ -6,12 +6,12 @@ services:
 
 env:
   matrix:
-   - DOCKERFILE_TARGET=php
-   - DOCKERFILE_TARGET=perl
-   - DOCKERFILE_TARGET=python
-   - DOCKERFILE_TARGET=ruby
-   - DOCKERFILE_TARGET=node-js
-   - DOCKERFILE_TARGET=jvm
+          #   - DOCKERFILE_TARGET=php
+          #   - DOCKERFILE_TARGET=perl
+          #   - DOCKERFILE_TARGET=python
+          #   - DOCKERFILE_TARGET=ruby
+          #   - DOCKERFILE_TARGET=node-js
+          #   - DOCKERFILE_TARGET=jvm
    - DOCKERFILE_TARGET=go
 
 install:
