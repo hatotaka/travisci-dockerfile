@@ -20,7 +20,8 @@ install:
  - sudo apt-get update
  - sudo apt-get install docker-engine
  - echo "DOCKER_OPTS=\"${DOCKER_OPTS}\"" | sudo tee /etc/default/docker
- - sudo restart docker
+ - sudo service docker restart
+ - sudo cat /var/log/upstart/docker.log
 
 script:
   - sudo docker build -t ${DOCKER_REGISTORY}/${DOCKER_USER}/travis-${DOCKERFILE_TARGET} ${DOCKERFILE_TARGET}
