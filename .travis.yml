@@ -21,6 +21,6 @@ install:
  - sudo apt-get install docker-engine
 
 script:
-  - sudo docker build -t ${DOCKER_REGISTORY}/${DOCKER_USER}/travis-${DOCKERFILE_TARGET} Dockerfile.${DOCKERFILE_TARGET}
+  - sudo docker build -t ${DOCKER_REGISTORY}/${DOCKER_USER}/travis-${DOCKERFILE_TARGET} ${DOCKERFILE_TARGET}
   - sudo docker push ${DOCKER_REGISTORY}/${DOCKER_USER}/travis-${DOCKERFILE_TARGET}
 
